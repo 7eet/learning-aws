@@ -17,4 +17,29 @@ _It is used for:_
 _bucket name is globally unique. Once a bucket is created, the name of that bucket cannot be used by another AWS account in any AWS Region until the bucket is deleted._<br>
 [Bucket Guidelines](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)<br>
 
+## Upload objects to bucket
 
+### cp command
+ - _upload file to bucket_
+  ```
+    aws s3 cp file.txt s3://bucket-name
+  ```
+ - _copy a object from one bucket to another bucket_
+  ```
+    aws s3 cp s3://bucket-one/file.txt s3://another-bucket
+  ```
+
+### mv command
+
+
+## Download object
+### cp command
+ - _download a file from bucket_
+  ```
+    aws s3 cp s3://bucket-name/file.txt .
+  ```
+
+## Delete object
+```
+  aws s3api delete-object --bucket bucket-name --key file.txt
+```
