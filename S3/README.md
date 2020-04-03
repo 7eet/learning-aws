@@ -9,9 +9,17 @@ _It is used for:_
    - Archive
 
 ## Create bucket
-```aws s3 mb s3://<bucket-name> --region <region>```
+```
+  aws s3 mb s3://<bucket-name> --region <region>
+```
+  **or**
+```
+  aws s3api create-bucket --bucket my-bucket --region us-east-1
+```
+_with this you can optionally specify the accounts or groups that should be granted specific permissions on the bucket._<br>
+[create-bucket](https://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html)
 
-**example**
+__example__
 
 ```aws s3 mb s3://practice --region us-west-2```
 
