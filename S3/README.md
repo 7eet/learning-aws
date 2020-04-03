@@ -15,9 +15,7 @@ _It is used for:_
 
 ```aws s3 mb s3://practice --region us-west-2```
 
-> Note: It will use default region when you do not specify the --region parameter
-
-_bucket name is globally unique. Once a bucket is created, the name of that bucket cannot be used by another AWS account in any AWS Region until the bucket is deleted._<br>
+> Note: It will use default region when you do not specify the --region parameter. The bucket name is globally unique. Once a bucket is created, the name of that bucket cannot be used by another AWS account in any AWS Region until the bucket is deleted.<br>
 [Bucket Guidelines](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)<br>
 
 ## Upload objects to bucket
@@ -60,3 +58,13 @@ _bucket name is globally unique. Once a bucket is created, the name of that buck
 ```
   aws s3api delete-object --bucket bucket-name --key file.txt
 ```
+
+## Delete bucket
+- _delete empty bucket_
+  ```
+    aws s3 rb s3://bucket-name
+  ```
+- _delete non-empty bucket_
+  ```
+    aws s3 rb s3://bucket-name --recursive --force
+  ```
