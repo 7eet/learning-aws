@@ -42,6 +42,20 @@ _bucket name is globally unique. Once a bucket is created, the name of that buck
     aws s3 cp s3://bucket-name/file.txt .
   ```
 
+## list the objects
+- _does not traverse inside the folder_
+  ```
+    aws s3 ls s3://bucket-name
+  ```
+- _traverse inside folder_
+  ```
+    aws s3 ls s3://bucket-name --recursive
+  ```
+- _readable format_
+  ```
+    aws s3 ls s3://bucket-name --human-readable --summarize
+  ```
+
 ## Delete object
 ```
   aws s3api delete-object --bucket bucket-name --key file.txt
