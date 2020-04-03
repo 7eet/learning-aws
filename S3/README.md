@@ -21,11 +21,11 @@ _It is used for:_
 ## Upload objects to bucket
 
 ### cp command
- - _upload file to bucket_
+#### upload file to bucket
   ```
     aws s3 cp file.txt s3://bucket-name
   ```
- - _copy a object from one bucket to another bucket_
+#### copy a object from one bucket to another bucket
   ```
     aws s3 cp s3://bucket-one/file.txt s3://another-bucket
   ```
@@ -35,21 +35,21 @@ _It is used for:_
 
 ## Download object
 ### cp command
- - _download a file from bucket_
+#### download a file from bucket
   ```
     aws s3 cp s3://bucket-name/file.txt .
   ```
 
-## list the objects
-- _does not traverse inside the folder_
+## List objects
+### does not traverse inside the folder
   ```
     aws s3 ls s3://bucket-name
   ```
-- _traverse inside folder_
+### traverse inside folder
   ```
     aws s3 ls s3://bucket-name --recursive
   ```
-- _readable format_
+### readable format
   ```
     aws s3 ls s3://bucket-name --human-readable --summarize
   ```
@@ -60,11 +60,11 @@ _It is used for:_
 ```
 
 ## Delete bucket
-- _delete empty bucket_
+### delete empty bucket
   ```
     aws s3 rb s3://bucket-name
   ```
-- _delete non-empty bucket_
+### delete non-empty bucket
   ```
     aws s3 rb s3://bucket-name --recursive --force
   ```
