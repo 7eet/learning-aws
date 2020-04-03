@@ -2,6 +2,7 @@
 _It is used to store and retreive objects(data)._<br>
 _Objects are store in a bucket._<br>
 _Create a bucket then store objects in it. You can do this with AWS Console, CLI and SKDs._<br>
+_[more](https://aws.amazon.com/s3/)_
 _It is used for:_
    - Backup and restore
    - Build static website
