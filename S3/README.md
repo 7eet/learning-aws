@@ -63,16 +63,131 @@ __example__
   ```
 
 ## Delete object
+_to delete a single object._<br>
 ```
+  aws s3 rm s3://bucket-name/file.txt
+
   aws s3api delete-object --bucket bucket-name --key file.txt
+```
+
+_to delete all objects in a bucket._<br>
+```
+  aws s3 rm s3://bucket-name --recursive
 ```
 
 ## Delete bucket
 ### delete empty bucket
   ```
     aws s3 rb s3://bucket-name
+    
+    aws s3api delete-bucket --bucket bucket-name
+    
   ```
 ### delete non-empty bucket
   ```
     aws s3 rb s3://bucket-name --recursive --force
   ```
+
+# s3api 
+  
+## delete server-side encryption
+```
+  aws s3api delete-bucket-encryption --bucket bucket-name
+```
+
+## delete bucket policy
+```
+  aws s3api delete-bucket-policy --bucket my-bucket
+```
+
+## delete website configuration from bucket
+```
+  aws s3api delete-bucket-website --bucket my-website
+```
+
+## delete object tagging
+```
+  aws s3api delete-object-tagging --bucket bucket-name --key file.txt
+```
+
+## get Access Control List (ACL)
+```
+  aws s3api get-bucket-acl --bucket my-bucket
+```
+
+## retrieve the server-side configuration for the bucket
+```
+  aws s3api get-bucket-encryption --bucket my-bucket
+```
+
+## retrieve the location of bucket
+```
+  aws s3api get-bucket-location --bucket my-bucket
+```
+
+## retrieve the logging status for a bucket
+```
+  aws s3api get-bucket-logging --bucket my-bucket
+```
+
+## retrieve the bucket policy
+```
+  aws s3api get-bucket-policy --bucket my-bucket
+```
+
+## retrieve the policy status for a bucket indicating whether the bucket is public
+```
+  aws s3api get-bucket-policy-status --bucket my-bucket
+```
+
+## retrieve the versioning configuration
+```
+  aws s3api get-bucket-versioning --bucket my-bucket
+```
+
+## retrieve the static website configuration
+```
+  aws s3api get-bucket-website --bucket my-website
+```
+
+## retrieve the ACL of object
+```
+  aws s3api get-object-acl --bucket my-bucket --key file.txt
+```
+
+## retrieve object tagging
+```
+  aws s3api get-object-tagging --bucket my-bucket --key file.txt
+```
+
+## verifies access to bucket
+```
+  aws s3api head-bucket --bucket my-bucket
+```
+
+## retrieve the metadata of a object
+```
+  aws s3api head-object --bucket my-bucket --key file.txt
+```
+
+## list buckets
+```
+  aws s3api list-buckets
+```
+
+## list objects
+```
+  aws s3api list-objects --bucket my-bucket
+```
+
+## put bucket ACL
+[read](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-acl.html)
+
+## put bucket policy
+[read](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-policy.html)
+
+## put bucket website
+[read](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-website.html)
+
+
+
