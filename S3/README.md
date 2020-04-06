@@ -29,23 +29,45 @@ __example__
 ## Upload objects to bucket
 
 ### cp command
+
 #### upload file to bucket
   ```
     aws s3 cp file.txt s3://bucket-name
   ```
+
 #### copy a object from one bucket to another bucket
   ```
     aws s3 cp s3://bucket-one/file.txt s3://another-bucket
   ```
 
+#### upload a folder to bucket
+  ```
+    aws s3 cp /dir/ s3://bucket-name/folder-name/ --recursive
+  ```
+
 ### mv command
 
+#### move local file to bucket
+  ``` 
+    aws s3 mv file.txt s3://bucket-name
+  ```
+
+#### move object from bucket to local system
+  ```
+    aws s3 mv s3://bucket-name/file.txt . 
+  ```
 
 ## Download object
+
 ### cp command
+
 #### download a file from bucket
   ```
     aws s3 cp s3://bucket-name/file.txt .
+  ```
+#### download a whole bucket
+  ```
+    aws s3 cp s3://bucket-name /path/to/dir --recursive
   ```
 
 ## List objects
