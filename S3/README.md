@@ -57,6 +57,21 @@ __example__
     aws s3 mv s3://bucket-name/file.txt . 
   ```
 
+## sync command
+
+### sync bucket with local directory
+  ```
+    aws s3 sync . s3://bucket-name
+  ```
+  _It will add all the new files and modified files to a bucket._
+
+### sync local directory
+  ```
+    aws s3 sync s3://bucket-name/dir .
+  ```
+  _It download all the files which are not present in this directory and modified in bucket but not in this directory._
+
+
 ## Download object
 
 ### cp command
